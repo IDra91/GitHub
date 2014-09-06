@@ -1,23 +1,25 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-
-package tarea3;
+package practica1;
 import java.util.Scanner;
-
-
-
+/**
+ *
+ * @author manuel
+ */
 public class Main {
 
-    
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-       int n=0;
-       Scanner s= new Scanner(System.in);
-       System.out.println("Por favor ingrese un número");
-       n= s.nextInt();
-       if (n%2 == 0){
-           System.out.println("El número es par");
-       }
-        else
-            System.out.println("El número es impar");
+      System.out.append("-= Bienvenido a LoveLetter =-");
+        Principal menu= new Principal();
+      menu.Opciones();
+      menu.menu(1);
+      
     }
 
 }
