@@ -125,24 +125,56 @@ public class Habi extends javax.swing.JFrame{
 
         pack();
     }
-
+	
     private void Boton1ActionPerformed(java.awt.event.ActionEvent evt) {
        JOptionPane.showMessageDialog(null, "Los precios de las habitaciones son:"
        		+ " 1.) Sencilla ------ US$50.00"
        		+ " 2.) Regular ------ US$100.00 "
        		+ "3.) Exclusiva ----- US$150.00");
     }
-
+    public class txt1{
+    	public String input;
+    }
+    public class txt2{
+    	public Integer input;
+    }
+    public class txt3{
+    	public String input;
+    }
+    public class txt4{
+    	public Integer input;
+    }
     private void Boton2ActionPerformed(java.awt.event.ActionEvent evt) {
         JOptionPane.showMessageDialog(null, "La promoción vigente ahorita es de 1 habitación Regular por 3 días, más una reservacion en el restaurante por solo US$110");
     }
 
     private void Boton3ActionPerformed(java.awt.event.ActionEvent evt) {
+          Lista l = new Lista();
           
+    	  String Nombre = txt1.getText();
+    	  String dias = txt2.getText();
+    	  String entero = dias;
+    	  Integer enteros = Integer.parseInt(entero);
+          String tipo = txt3.getText();
+          String precio = txt4.getText();
+          String entero2 = precio;
+          Integer precios = Integer.parseInt(entero2);
+          l.InsertarInicio(Nombre, enteros, precios, tipo, "ocupado");
+          JOptionPane.showMessageDialog(null, "Se han incertado los datos correctamente. Gracias");
     }
 
     private void Boton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        
+        ListaCola lc = new ListaCola();
+        	String Nombre = txt1.getText();
+        	String dias = txt2.getText();
+        	String ent = dias;
+        	Integer ents = Integer.parseInt(ent);
+        	String tipo = txt3.getText();
+        	String precio = txt4.getText();
+        	String ent2 = precio;
+        	Integer precios = Integer.parseInt(ent2);
+        	lc.Insertar(Nombre, ents, precios, tipo, "Espera");
+        	JOptionPane.showMessageDialog(null, "Se han agregado los clientes a la lista de espera. Gracias");
     }
 
     
