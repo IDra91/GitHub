@@ -35,14 +35,37 @@ public class Nodo {
 	public void setAnterior(Nodo anterior){
 		this.anterior = anterior;
 	}
-	
-	public String getDato(){
+	public void AddCuentaR(Integer precio){
+		this.Precio = precio;
+		precio = precio + 50;
+	}
+	public void AddCuentaP(Integer precio){
+		this.Precio = precio;
+		precio = precio + 10;
+	}
+	public void AddCuentaB(Integer precio){
+		this.Precio = precio;
+		precio = precio + 20;
+	}
+	public void AddDisco(Integer precio){
+		this.Precio = precio;
+		precio = precio + 10;
+	}
+	public String getNombre(){
 		return nombre;
 	}
 	public Integer getPrecio(){
 		return Precio;
 	}
-	
+	public Integer getFecha(){
+		return dias;
+	}
+	public String getTipo(){
+		return Tipo;
+	}
+	public String getEstado(){
+		return Estado;
+	}
 	public void setNombre(String Nombre){
 		this.nombre = Nombre;
 	}

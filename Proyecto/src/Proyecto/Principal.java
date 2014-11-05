@@ -59,8 +59,8 @@ public class Principal extends JFrame {
 		JButton btnReservarHabitacion = new JButton("Entrar");
 		btnReservarHabitacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Control c = new Control();
-				c.setVisible(true);
+				Ventana v = new Ventana();
+				v.setVisible(true);
 			}
 		});
 		contentPane.add(btnReservarHabitacion, BorderLayout.SOUTH);

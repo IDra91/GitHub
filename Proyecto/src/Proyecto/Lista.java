@@ -1,5 +1,7 @@
 package Proyecto;
 
+import javax.swing.JOptionPane;
+
 
 
 public class Lista {
@@ -28,7 +30,7 @@ public class Lista {
 	
 	
 	public String obtenerInicio(){
-		String dato = inicio.getDato();		
+		String dato = inicio.getNombre();		
 		inicio = inicio.getSiguiente();
 		if(inicio != null){
 			inicio.setAnterior(null);
@@ -39,7 +41,7 @@ public class Lista {
 	}
 	 
 	public String obtenerFin(){
-		String dato = fin.getDato();		
+		String dato = fin.getNombre();		
 		fin = fin.getAnterior();
 		if(fin != null){
 			fin.setSiguiente(null);
@@ -52,7 +54,7 @@ public class Lista {
 	public void MostrarAdelante(){
 		Nodo temp = inicio;
 		while(temp != null){
-			System.out.println(temp.getDato());
+			System.out.println(temp.getNombre());
 			temp = temp.getSiguiente();
 		}
 		
@@ -61,22 +63,66 @@ public class Lista {
 	public void MostrarRegreso(){
 		Nodo temp = fin;
 		while(temp != null){
-			System.out.println(temp.getDato());
+			System.out.println(temp.getNombre());
 			temp = temp.getAnterior();
 		}
 	}
 	
-	public void buscar(String dato){
+	public void buscarRestaurante(String nombre, Integer precio){
 		Nodo temp = inicio;
 		while(temp != null){
-			if(temp.getDato().equals(dato)){
-				System.out.println("El dato sí está");
+			if(temp.getNombre().equals(nombre)){
+				JOptionPane.showMessageDialog(null, "Se ha encontrado al cliente, se le ingresara su cargo");
+				temp.AddCuentaR(precio);
+				break;
 			}
 			else{
 				temp = temp.getSiguiente();
 			}
-				System.out.println("El dato no está");			
-	
+							
+			JOptionPane.showMessageDialog(null, "El cliente no esta registrado");
 	}
+	
+}
+	public void buscarPiscina(String nombre, Integer precio){
+		Nodo temp = inicio;
+		while(temp != null){
+			if(temp.getNombre().equals(nombre)){
+				JOptionPane.showMessageDialog(null, "Se ha encontrado al cliente, se le ingresara su cargo");
+				temp.AddCuentaP(precio);
+				break;
+			}
+			else{
+				temp = temp.getSiguiente();
+			} JOptionPane.showMessageDialog(null, "El cliente no esta registrado");
+		}
+	}
+	public void buscarDiscoteca(String nombre, Integer precio){
+		Nodo temp = inicio;
+		while(temp != null){
+			if(temp.getNombre().equals(nombre)){
+				JOptionPane.showMessageDialog(null, "Se ha encontrado al cliente, se le ingresara su cargo");
+				temp.AddDisco(precio);
+				break;
+			}
+			else{
+				temp = temp.getSiguiente();
+			}	JOptionPane.showMessageDialog(null, "El cliente no esta registrado");
+		}
+	}
+	public void buscarBar(String nombre, Integer precio){
+		Nodo temp = inicio;
+			while(temp != null){
+				if(temp.getNombre().equals(nombre)){
+					JOptionPane.showMessageDialog(null, "Se ha encontrado al cliente, se le ingresara su cargo");
+					temp.AddCuentaB(precio);
+					break;
+				}
+				else{
+						temp = temp.getSiguiente();
+				}	JOptionPane.showMessageDialog(null, "El cliente no esta registrado");
+			}
 	}
 }
+
+
